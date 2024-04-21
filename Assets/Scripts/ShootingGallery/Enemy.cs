@@ -1,13 +1,21 @@
+using System;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private Rigidbody[] _rigidbodies;
     
-    public bool IDead { get; private set; }
+    public bool IsDead { get; private set; }
 
-    private void Start()
+    private async void Start()
     {
+        IsDead = true;
+        RagDollKinematic();
+        var rand = new System.Random();
+        
+        await Task.Delay(TimeSpan.FromSeconds(rand.Next(1, 5)));
+        IsDead = false;
         RagDollKinematic();
     }
     
@@ -15,7 +23,7 @@ public class Enemy : MonoBehaviour
     {
         foreach (var rb in _rigidbodies)
         {
-            rb.isKinematic = !IDead;
+            rb.isKinematic = IsDead;
         }
     }
 }

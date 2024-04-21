@@ -1,54 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3802935266875518711
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4619651880328649107}
-  - component: {fileID: 1509691089467061115}
-  m_Layer: 3
-  m_Name: CharacterMoving
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4619651880328649107
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3802935266875518711}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4634961573922781636}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1509691089467061115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3802935266875518711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 054b93c9385c481d85d2c82bb56c2dc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _shootingZone:
-  - {fileID: 4634961574702665964}
-  - {fileID: 4634961574664867422}
-  - {fileID: 4634961574256427957}
-  _emergencyPoints: {fileID: 4634961575466938202}
 --- !u!1 &4634961573666526686
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,6 +148,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4634961573922781636}
+  - component: {fileID: 1241838412057626782}
   m_Layer: 3
   m_Name: Level
   m_TagString: Untagged
@@ -220,10 +172,26 @@ Transform:
   - {fileID: 4634961573836596982}
   - {fileID: 4634961575466938205}
   - {fileID: 4634961575398291666}
-  - {fileID: 4619651880328649107}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1241838412057626782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634961573922781637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 865a7fc444654abaacea6730598a9f35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _encounters:
+  - {fileID: 4634961574702665964}
+  - {fileID: 4634961574664867422}
+  - {fileID: 4634961574256427957}
+  _characterSpawnPosition: {fileID: 4634961575466938205}
 --- !u!1 &4634961574074391367
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,7 +239,7 @@ GameObject:
   - component: {fileID: 4634961574256427954}
   - component: {fileID: 4634961574256427957}
   m_Layer: 0
-  m_Name: ShootingZone
+  m_Name: Encounter_3
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -312,7 +280,7 @@ MonoBehaviour:
   - {fileID: 4634961574267219811}
   - {fileID: 4634961575479488492}
   _enemyPrefab: {fileID: 9143970935243586102, guid: 5277a167e5270bb42a98b099d22f0cb5, type: 3}
-  <EntryPoint>k__BackingField: {fileID: 4634961574702665965}
+  <EntryPoint>k__BackingField: {fileID: 4634961574256427954}
 --- !u!1 &4634961574267219808
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,7 +444,7 @@ GameObject:
   - component: {fileID: 4634961574664867423}
   - component: {fileID: 4634961574664867422}
   m_Layer: 0
-  m_Name: ShootingZone
+  m_Name: Encounter_2
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -517,7 +485,7 @@ MonoBehaviour:
   - {fileID: 4634961573666526625}
   - {fileID: 4634961573860189276}
   _enemyPrefab: {fileID: 9143970935243586102, guid: 5277a167e5270bb42a98b099d22f0cb5, type: 3}
-  <EntryPoint>k__BackingField: {fileID: 4634961574702665965}
+  <EntryPoint>k__BackingField: {fileID: 4634961574664867423}
 --- !u!1 &4634961574702665962
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,7 +497,7 @@ GameObject:
   - component: {fileID: 4634961574702665965}
   - component: {fileID: 4634961574702665964}
   m_Layer: 0
-  m_Name: ShootingZone
+  m_Name: Encounter_1
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -803,9 +771,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4634961575466938205}
-  - component: {fileID: 4634961575466938202}
   m_Layer: 0
-  m_Name: EmergencePoint
+  m_Name: CharacterSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -826,19 +793,6 @@ Transform:
   m_Father: {fileID: 4634961573922781636}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4634961575466938202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4634961575466938203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad8575359bf24b49b16c7a39f98f8994, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _characterPrefab: {fileID: 303920647155449205, guid: 1184b38d9475a0744a533062f06f03fb, type: 3}
 --- !u!1 &4634961575479488493
 GameObject:
   m_ObjectHideFlags: 0

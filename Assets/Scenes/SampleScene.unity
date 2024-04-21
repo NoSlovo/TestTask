@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 1128084730}
   - component: {fileID: 1128084731}
   m_Layer: 0
-  m_Name: Bootstrap
+  m_Name: Bootstraper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -251,4 +251,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac02d5367834c244bd12178ad7ae2bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelPrefab: {fileID: 4634961573922781637, guid: 04a44aa078f8da04794d05d3844d8d0f, type: 3}
+  _levelProvider: {fileID: 1241838412057626782, guid: 04a44aa078f8da04794d05d3844d8d0f, type: 3}
+  _characterPrefab: {fileID: 303920647155449205, guid: 1184b38d9475a0744a533062f06f03fb, type: 3}
