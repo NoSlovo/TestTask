@@ -5,8 +5,6 @@ namespace Player
 {
     public class Character : MonoBehaviour
     {
-        [SerializeField] private MovementComponent _movementComponent;
-
-        public void Move(Vector3 movePoint) => _movementComponent.NavMeshAgent.SetDestination(movePoint);
+        [field:SerializeField] public MovementComponent MovementComponent { get;private set; }
     }
 }
