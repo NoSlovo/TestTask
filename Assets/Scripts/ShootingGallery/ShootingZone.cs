@@ -1,32 +1,38 @@
 using System.Collections.Generic;
+using System.Linq;
+using DefaultNamespace.EntryPoint;
 using UnityEngine;
+using Сreators;
 
 namespace ShootingGallery
 {
     public class ShootingZone : MonoBehaviour
     {
         [SerializeField] private List<Transform> _enemyCreatePoints;
-        [SerializeField] private EnemyCreatorService enemyCreatorService;
+        [SerializeField] private Enemy _enemyPrefab;
 
         [field: SerializeField] public Transform EntryPoint { get; private set; }
 
-        private List<Enemy> _enemiesinstance;
+
+        private CreatorService _enemyCreatorService;
+        private List<Enemy> _enemiesInstance;
 
         private int _countingDeadEnemies = 0;
 
         public void Start()
         {
-            Initialize();
+            _enemyCreatorService = ServiceLocator.Instance.GetService<CreatorService>();
+            Setup();
         }
 
-        private void Initialize()
+        private void Setup()
         {
-            _enemiesinstance = new List<Enemy>(_enemyCreatePoints.Count);
+            _enemiesInstance = new List<Enemy>(_enemyCreatePoints.Count());
             for (int i = 0; i < _enemyCreatePoints.Count; i++)
             {
-                Enemy enemy = enemyCreatorService.Create();
+                Enemy enemy = _enemyCreatorService.Create(_enemyPrefab);
                 enemy.transform.position = _enemyCreatePoints[i].position;
-                _enemiesinstance.Add(enemy);
+                _enemiesInstance.Add(enemy);
             }
         }
 
@@ -38,7 +44,7 @@ namespace ShootingGallery
 
         private void CheckDeadAllEnemies()
         {
-            if (_countingDeadEnemies >= _enemiesinstance.Count)
+            if (_countingDeadEnemies >= _enemiesInstance.Count)
             {
             }
         }
